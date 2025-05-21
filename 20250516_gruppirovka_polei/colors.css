@@ -1,0 +1,18 @@
+[for=red] {
+    color: red;
+}
+#red {
+    accent-color: red;
+}
+[for=green] {
+    color: green;
+}
+#green {
+    accent-color: green;
+}
+[for=blue] {
+    color:blue;
+    }
+    #blue {
+        accent-color:blue;
+    }
