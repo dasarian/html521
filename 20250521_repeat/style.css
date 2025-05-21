@@ -6,3 +6,10 @@ table, td, th {
 .sky {
     background-color: rgb(192, 250, 250);
 }
+
+form {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    width: 35vw;
+    margin:auto
+}
