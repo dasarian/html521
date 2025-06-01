@@ -1,4 +1,3 @@
-
 let seconds = 45; 
 let totalSeconds = seconds + 580;
 
