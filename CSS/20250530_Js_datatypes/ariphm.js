@@ -9,21 +9,15 @@
  * Выведите результат
  */
 
-let operator = 1000;
-operator = 1000;
-console.log(operator);
-
-operator = operator * 2;
-console.log(operator);
-
-operator = operator - 10;
-console.log(operator);
-
-operator = operator / 8;
-console.log(operator);
-
-operator = operator ** 3;
-console.log(operator);
-
-operator = operator ++;
-console.log(operator);
+let operator=1000;
+console.log('создали переменную', operator);
+operator*=2;
+console.log('Увеличи вдвое', operator)
+operator-=10;
+console.log("вычли 10", operator);
+let rest_operator=operator%8;
+console.log("результат присвоили новой переменной", rest_operator);
+rest_operator**=3;
+console.log("возвели в 3 степень", rest_operator);
+rest_operator++;
+console.log("выполнили инкремент ", rest_operator);
