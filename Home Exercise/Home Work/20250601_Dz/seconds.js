@@ -1,17 +1,15 @@
-let seconds = 45;  
-// Add 580 seconds
-seconds += 580;
+let seconds = 45; 
+let totalSeconds = seconds + 580;
 
-// Calculate minutes and remaining seconds
-const minutes = Math.floor(seconds / 60);
-const remainingSeconds = seconds % 60;
+// Calculate the number of minutes and the remaining seconds
+let minutes = Math.floor(totalSeconds / 60); // Get the total minutes
+let remainingSeconds = totalSeconds % 60;    // Get the remaining seconds
 
-
-console.log(`${minutes} minutes and ${remainingSeconds} seconds`);
+console.log(`Total time is ${minutes} minutes and ${remainingSeconds} seconds.`);
 
 
 
-2.1 Правда ли, что 5800 секунд больше часа? Больше 2х часов?
+Правда ли, что 5800 секунд больше часа? Больше 2х часов?
 
 const seconds = 5800;
 const isMoreThanOneHour = seconds > 3600; // 1 hour = 3600 seconds
@@ -21,7 +19,7 @@ console.log(`Is 5800 seconds more than an hour? ${isMoreThanOneHour}`);
 console.log(`Is 5800 seconds more than two hours? ${isMoreThanTwoHours}`);
 
 
-2.2 Правда ли, что если цена составляет 230 рублей за штуку
+Правда ли, что если цена составляет 230 рублей за штуку
     и купили 27 штук, то хватит 500 рублей? 5000 рублей? 7000 рублей?
 
 const pricePerPiece = 230;
@@ -37,7 +35,7 @@ console.log(`Is 5000 rubles enough? ${is5000Enough}`);
 console.log(`Is 7000 rubles enough? ${is7000Enough}`);
 
 
-2.3 Правда ли, что 5000 рублей хватит, а 7000 НЕ хватит 
+Правда ли, что 5000 рублей хватит, а 7000 НЕ хватит 
 
 const is5000EnoughButNot7000 = is5000Enough && !is7000Enough;
 
