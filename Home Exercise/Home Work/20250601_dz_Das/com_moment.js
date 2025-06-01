@@ -1,4 +1,5 @@
-
+/** Правда ли, что 5800 секунд больше часа? Больше 2х часов?
+ */
 
 const seconds = 5800;
 const isMoreThanOneHour = seconds > 3600; // 1 hour = 3600 seconds
@@ -8,7 +9,8 @@ console.log(`Is 5800 seconds more than an hour? ${isMoreThanOneHour}`);
 console.log(`Is 5800 seconds more than two hours? ${isMoreThanTwoHours}`);
 
 
-
+/** Правда ли, что если цена составляет 230 рублей за штуку и купили 27 штук, то хватит 500 рублей? 5000 рублей? 7000 рублей?
+ */
 const pricePerPiece = 230;
 const quantity = 27;
 const totalCost = pricePerPiece * quantity;
@@ -21,7 +23,8 @@ console.log(`Is 500 rubles enough? ${is500Enough}`);
 console.log(`Is 5000 rubles enough? ${is5000Enough}`);
 console.log(`Is 7000 rubles enough? ${is7000Enough}`);
 
-
+/** Правда ли, что 5000 рублей хватит, а 7000 НЕ хватит
+ */
 
 const is5000EnoughButNot7000 = is5000Enough && !is7000Enough;
 

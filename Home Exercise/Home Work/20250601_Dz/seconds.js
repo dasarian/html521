@@ -18,8 +18,7 @@ console.log(`Is 5800 seconds more than an hour? ${isMoreThanOneHour}`);
 console.log(`Is 5800 seconds more than two hours? ${isMoreThanTwoHours}`);
 
 
-Правда ли, что если цена составляет 230 рублей за штуку
-    и купили 27 штук, то хватит 500 рублей? 5000 рублей? 7000 рублей?
+Правда ли, что если цена составляет 230 рублей за штуку и купили 27 штук, то хватит 500 рублей? 5000 рублей? 7000 рублей?
 
 const pricePerPiece = 230;
 const quantity = 27;
