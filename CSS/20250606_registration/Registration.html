@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src ="registration.js"></script>
+    <link rel="stylesheet" href="reg.css">
+    <title>Registration</title>
+</head>
+<body>
+    <h1>Регистрация посетителей</h1>
+
+<div>
+    <label for="name1">Имя (ФИО):</label>
+    <input type="text" id="name1">
+</div>
+<br>
+<div>
+    <label for="age">Возраст:</label>
+    <input type="number" id="age" min="0"> 
+</div>
+<br>
+
+<input type="button" onclick="addVisitor()">
+<ol id ="Добавить посетителя"></ol>  
+
+<h2>Список посетителей :</h2>
+<ol id="visitorList"></ol>
+
+
+</body>
+</html>
