@@ -5,5 +5,5 @@ function add_kid() {
     let li = document.createElement('li')
     kids.appendChild(li)
     console.log(fio.value)
-    li.textContent = 'Пришёл: ' + fio.value +' возраст '+ (2025-year.value)
+    li.textContent = 'Пришёл : ' + fio.value +' возраст '+ (2025-year.value)
 }
