@@ -1,5 +1,2 @@
-
-document.getElementById('submit').addEventListener('click', function() {
-let priceValue = document.getElementById('price').value;
-console.log(priceValue);
-});
+let price = document.getElementById('price');
+console.log(price.valueAsNumber);
