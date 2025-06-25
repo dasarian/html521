@@ -1,20 +1,20 @@
 let n = 3;
 const plus = n;
 while (n <100) {
-    console.log(n)
-    n = n + plus
+console.log(n)
+n = n + plus
 }
 
 let i = 99;
 const minus = 3;
 while (i >0) {
-    console.log(i)
-    i = i - minus
+console.log(i)
+i = i - minus
 }
 
-let o = 2;
-const multiple = o;
-while (0<10) {
-    console.log(o)
-    o = o * multiple
+let p = 0
+const plus = 2
+while (p < 10) {
+console.log(p)
+p = p + plus
 }
