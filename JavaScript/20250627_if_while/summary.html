@@ -86,7 +86,7 @@
     </code>
     </pre>
     <h2>Перебор элементов for ... of</h2>
-    <p>Массив можно перебирать специальным циклом for</p>
+    <p>Массив можно перебирать по элементам специальным циклом for</p>
     <pre>
     <code class="language-JavaScript">
     const bag = ['Ключи', 'билет']
@@ -97,6 +97,28 @@
     </code>
     </pre>
     <h2>Перебор номеров for ... in</h2>
+    <p>Перебирает позиционный массив по номерам позиций</p>
+    
+    <pre>
+    <code class="language-JavaScript">
+    const fruit = ['ананас', 'мандарин', 'киви']
+    // for (let n = 0; n < fruit.length; n++) {
+    for (let n in fruit) {
+        console.log(n, fruit[n])
+    }
+    </code>
+    </pre>
+
+    <h2>in без for проверяет в массиве наличие индекса</h2>
+
+    <pre>
+    <code class="language-JavaScript">
+    2 in [7, 77, 777]  // ожидается: true
+    </code>
+    </pre>
+
+    <p>Индекс 2 присутствует в указанном массиве, под ним располагается число 777.</p>
+
     <h2>"Сишный" for: for(start, condition, ending)</h2>
     <h1>Домашнее задание</h1>
     <ol>
