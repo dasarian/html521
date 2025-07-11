@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="8table.css" rel="stylesheet">
+    <script src="8.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<h2>Таблица</h2>
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Количество</th>
+        <th>Сумма</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <h2>Добавить строку</h2>
+  <label for="name">Название:</label><br>
+  <input type="text" id="name" name="name"><br><br>
+
+  <label for="price">Цена:</label><br>
+  <input type="number" id="price" name="price"><br><br>
+
+  <label for="quantity">Количество:</label><br>
+  <input type="number" id="quantity" name="quantity"><br><br>
+
+  <button onclick="addRow()">Добавить</button>
+</body>
+</html>
