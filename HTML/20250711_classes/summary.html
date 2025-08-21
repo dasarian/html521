@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="prism.js" defer></script>
+    <link rel="stylesheet" href="prism.css">
+    <script src="script.js" defer></script>
+    <title>Классы</title>
+</head>
+<body>
+    <h1>Классы</h1>
+    <h2>Способ создания типа данных</h2>
+<p>Класс - это способ создания нового типа данных.
+    Подобно, напрмер, уже созданному до нас Date.</p>
+<p><b>Задача:</b> создать несколько переменных, хранящих информацию о людях.</p>
+    <pre>
+    <code class="language-JavaScript">
+        let man = {
+            'firstname': 'Вася',
+            'age': 35
+        }
+        let girl = {
+            'firstname': 'Ася',
+            'age': 32
+        }
+        let boy = {
+            'firstname': 'Дима',
+            'age': 5
+        }
+    </code>
+    </pre>        
+<h2>Синтаксис</h2>
+<ol>
+    <li>Ключевое слово <b>class</b></li>
+    <li>Название - <s>традиционно</s> всегда с большой буквы</li>
+    <li>В фигурных скобках - свойства класса - <b>поля</b> и <b>методы</b></li>
+    <li>Поле - переменная в классе.</li>
+    <li>Метод - функция в классе <b>без ключевого слова function</b>.</li>
+    <li>Конструктор (называется constructor) - метод для создания и инициализации класса. <b>Единственный вызывается по имени класса.</b></li>
+</ol>
+<pre>
+    <code class="language-JavaScript">
+class Human {
+    firstname                   // поле
+    birthday                    // поле
+    constructor(newname, dt) {  // метод
+        this.firstname = newname  // 'Вася'
+        this.birthday = dt        // new Date(2000, 5, 2)
+    }
+}
+
+let man = new Human('Вася', new Date(1990, 2, 4))
+let girl = new Human('Ася', new Date(1993, 6, 4))
+let boy = new Human('Дима', new Date(2019, 10, 18))
+    </code>
+    </pre>   
+<p>Теперь можно создавать объект класса, а присваиванием занимается его метод-конструктор. Но имя и дату рождения можно "испоритить" извне:</p>
+<pre>
+    <code class="language-JavaScript">
+class Human {
+    firstname                   // поле
+    birthday                    // поле
+    constructor(newname, dt) {  // метод
+        this.firstname = newname  // 'Вася'
+        this.birthday = dt        // new Date(2000, 5, 2)
+    }
+}
+
+let man = new Human('Вася', new Date(1990, 2, 4))
+let girl = new Human('Ася', new Date(1993, 6, 4))
+let boy = new Human('Дима', new Date(2019, 10, 18))
+girl.firstname = 'Миша'
+console.log(girl.firstname)
+    </code>
+    </pre>
+<h2>getter - метод для чтения данных</h2>
+<p>Решение: поле сделать приватным и создать метод-геттер:</p>
+<pre>
+    <code class="language-JavaScript">
+class Human {
+    #firstname                  // приватное поле
+    birthday                    // поле
+    constructor(newname, dt) {  // метод
+        this.firstname = newname  // 'Вася'
+        this.birthday = dt        // new Date(2000, 5, 2)
+    }
+    get name() {
+        return this.#firstname
+    }
+}
+
+let man = new Human('Вася', new Date(1990, 2, 4))
+let girl = new Human('Ася', new Date(1993, 6, 4))
+let boy = new Human('Дима', new Date(2019, 10, 18))
+// girl.#firstname = 'Миша' - ошибка, нельзя записывать и читать приватное поле
+console.log(girl.name)  // обращение к методу getter - без круглых скобок!
+    </code>
+    </pre>
+<h2>setter - метод для записи данных</h2>
+<p>А как записать новое значение в приватное поле, если есть необходимость?
+    Почему нельзя поле просто открыть для записи?
+    Не все <s>йогурты</s> значения одинаково полезны.
+    Если перед присваиванием необходимо выполнять проверку присваиваемого значения,
+    хорошо бы поручить это функции и не писать каждый раз, чтобы не забыть и не усложнять код повторами.
+    DRY - Don't Repeat Yourself - не повторяйся. Дата рождения современного человека не должна превышать текущую
+    и маловероятно может быть ранее 1800 года. Напишем метод проверки:
+</p>
+<pre>
+    <code class="language-JavaScript">
+/* КОД НЕ РАБОТАЕТ! Берите из program.js! */
+class Human {
+    // класс сокращен для удобства понимания. Полный код класса в прилагаемом файле
+    #birthday                    // поле
+    set birthday(new_bd) {
+        if ((new_bd &lt; new Date()) && (new_bd &gt; new Date(1800, 0, 1))) {
+            this.#birthday = new_bd
+        } else {
+            console.error('Неверная дата рождения: ', new_bd)
+        }
+    }
+}
+
+let girl = new Human('Ася', new Date(1993, 6, 4))
+console.log(girl.birthday)
+girl.birthday = new Date(2128, 8, 8)  // В консоли появится ошибка, неверная дата
+console.log(girl.birthday)
+</code>
+</pre>
+<h2>Инкапсуляция</h2>
+<p>Принцип сокрытия полей и методов класса (методы можно скрывать ровно так же!) назвается инкапсуляцией (от слова капсула). 
+    Совет: применяйте инкапсуляцию везде, не пишите публичные поля класса. Используйте контролирующие геттеры и сеттеры
+     для доступа к данным на чтение и запись.
+</p>
+    <h1>Домашнее задание</h1>
+    <ol>
+        <li>Написать getter для получения возраста <span onclick="show_hide('t1')">Ответ</span>
+        <pre id="t1" style="display:none">
+        <code class="language-JavaScript">
+    get age() {  // поля "возраст" не будет - только getter
+        let dt_now = new Date()
+        let age_now = dt_now.getFullYear() - this.#birthday.getFullYear()
+        // Если ДР ещё не наступил, вычитаем год
+        if (dt_now.getMonth() < this.#birthday.getMonth() || dt_now.getMonth() == this.#birthday.getMonth() && dt_now.getDate() < this.#birthday.getDate()) {
+            return age_now - 1
+        }
+        return age_now
+    }
+        </code>
+        </pre>        
+        </li>
+        <li>Написать getter для ответа на вопрос, является ли человек взрослым</li>
+        <li>Написать класс Машина с конструктором и двумя полями: марка и количество колес.
+            Марка должна быть только на чтение, а сеттер количества колес не должен давать
+            присвоить меньше 4 колес, больше 20 и нечетное число.
+    <span onclick="show_hide('t3')">Ответ</span>
+        <pre id="t3" style="display:none">
+        <code class="language-JavaScript">
+class Car {
+    #brand
+    #wheels
+    constructor(brand, wheels) {
+        this.#brand = brand
+        this.wheels = wheels  // да, в конструкторе тоже удобно использовать свой сеттер!
+    }
+    get brand() {
+        return this.#brand
+    }
+    get wheels() {
+        return this.#wheels
+    }
+    set wheels(new_wheels) {
+        if (new_wheels >= 4 && new_wheels <= 20) {
+            if (new_wheels % 2 === 0) {
+                this.#wheels = new_wheels
+            } else {
+                console.error("Количество колес должно быть четным, а не ", new_wheels)
+            }
+        } else {
+            console.error("Количество колес должно быть от 4 до 20, а не ", new_wheels)
+        }
+    }
+}
+
+let c = new Car('Lada', 4)
+console.log(c.brand, c.wheels)
+        </code>
+        </pre>        
+    </li>
+</ol>
+</body>
+</html>
