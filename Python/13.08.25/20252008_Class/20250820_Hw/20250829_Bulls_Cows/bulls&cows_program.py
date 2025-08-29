@@ -17,19 +17,18 @@ def count_bulls_and_cows(guess, secret):
 def play_game():
     secret_number = generate_secret_number()
     attempts = 0
-
-    while True:
+    guessed = False
+    
+    while not guessed:
         guess = input("Please enter four digit number: ").strip()
         if len(guess) != 4 or not guess.isdigit() or len(set(guess)) != 4:
             print("Error: enter a four digit number with unique digits.")
-            continue
 
         attempts += 1
         bulls, cows = count_bulls_and_cows(guess, secret_number)
 
         if bulls == 4:
             print(f"Congratulations! You guessed the number {secret_number} for {attempts} attempts!")
-            break
         else:
             print(f"Bulls: {bulls}, Cows: {cows}")
 if __name__ == "__main__":
