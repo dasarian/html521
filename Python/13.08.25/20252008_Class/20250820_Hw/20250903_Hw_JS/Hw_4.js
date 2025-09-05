@@ -1,21 +1,16 @@
-const name = prompt("Введите ваше имя:");
-const birthDateInput = prompt("Введите вашу дату рождения (в формате ГГГГ-ММ-ДД):");
+function greetUser() {
+    const name = document.getElementById('name').value;
+    const birthYear = parseInt(document.getElementById('birthYear').value);
+    const currentYear = new Date().getFullYear();
+    const age = currentYear - birthYear;
 
-const birthDate = new Date(birthDateInput);
-const today = new Date();
-
-let age = today.getFullYear() - birthDate.getFullYear();
-
-if (today.getMonth() < birthDate.getMonth() || 
-    (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
-    age--;
-}
-
+let greeting;
 if (age < 10) {
-    alert(`Привет, ${name}!`);
-} else if (age >= 10 && age < 20) {
-    alert(`Здравствуйте, ${name}!`);
-} else {
-    const patronymic = prompt("Не могли бы вы назвать своё отчество?");
-    alert(`Здравствуйте, ${name} ${patronymic}!`);
-}
+    greeting = `Привет, ${name}!`;
+            } else if (age >= 10 && age <= 20) {
+                greeting = `Здравствуйте, ${name}!`;
+            } else {
+                greeting = `Не подскажете, как вас по отчеству?`;
+            }
+            document.getElementById('greeting').textContent = greeting;
+        }

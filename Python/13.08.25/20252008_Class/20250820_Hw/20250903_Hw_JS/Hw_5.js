@@ -1,9 +1,16 @@
-let price = prompt("Сколько стоит килограмм яблок?");
-
-if (price > 1000) {
-  console.log("Мне дорого");
-} else if (price >= 100 && price <= 1000) {
-  console.log("Мне 1 килограмм");
-} else {
-  console.log("Мне 5 кг");
-}
+function checkPrice() {
+            const price = parseFloat(document.getElementById('applePrice').value);
+            if (isNaN(price) || price <= 0) {
+                document.getElementById('result').textContent = "Пожалуйста, введите корректную цену.";
+                return;
+            }
+            let message;
+            if (price > 1000) {
+                message = "Мне дорого";
+            } else if (price >= 100) {
+                message = "Мне 1 килограмм";
+            } else {
+                message = "Мне 5 кг";
+            }
+            document.getElementById('result').textContent = message;
+        }

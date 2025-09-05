@@ -1,2 +1,4 @@
-let number = prompt("Введите число:");
-console.log(`Ты ввел ${number}`);
+function displayNumber() {
+const number = document.getElementById('numberInput').value;
+document.getElementById('output').textContent = `Ты ввел ${number}`;
+        }
