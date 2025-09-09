@@ -1,13 +1,35 @@
-dimensions = input("Enter field dimensions: ")
-width, height = map(int, dimensions.split('x'))
-row = 0
-while row < height:
-    col = 0
-    while col < width:
-        if row == 0 or row == height - 1 or col == 0 or col == width - 1:
-            print('*', end='')
-        else:
-            print(' ', end='')
-        col += 1
+# 3. Спросить человека размеры поля (х * у), 
+# получить их ОДНИМ вводом '7x8', 
+# Нарисовать только границу поля и пустую серединку.
+
+sizes = input('Введите размеры поля (WхH): ')
+W, H = sizes.split('x')
+W = int(W)  # width = ширина
+H = int(H)  # height = высота
+print('o' * W)  # Верх отдельно
+# первая и последняя ошечки и серединка на 2 пробела меньше
+# общей ширины поля
+print(('o' + ' ' * (W - 2)  + 'o\n') * (H - 2), end='')
+print('o' * W)  # Низ отдельно
+
+print()
+
+# 2. Спросить человека размеры поля (х * у), 
+# получить их ОДНИМ вводом '7x8', 
+# "нарисовать" поле буковками о без использования цикла.
+
+sizes = input('Введите размеры поля (WхH): ')
+W, H = sizes.split('x')
+W = int(W)  # width = ширина
+H = int(H)  # height = высота
+h = 0
+while h < H:
+    # Цикл по строкам
+    h += 1
+    w = 0
+    while w < W:
+        w += 1
+        print('o', end='')
     print()
-    row += 1
+#print(('o' * W + '\n') * H)
+

@@ -1,6 +1,10 @@
-dimensions = input("Enter field dimensions (x*y): ")
-x, y = map(int, dimensions.split('x'))
-row = 1
-while row <= y:
-    print('o' * x)
-    row += 1
+# 2. Спросить человека размеры поля (х * у), 
+# получить их ОДНИМ вводом '7x8', 
+# "нарисовать" поле буковками о без использования цикла.
+
+sizes = input('Введите размеры поля (WхH): ')
+W, H = sizes.split('x')
+W = int(W)  # width = ширина
+H = int(H)  # height = высота
+print(('o' * W + '\n') * H)
+
