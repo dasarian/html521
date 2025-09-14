@@ -5,11 +5,11 @@ for i in range(77, 778, 2):
 
 
 # 2. А теперь - используя переменные
-start_number = 77
-end_number = 777
-
-for number in range(start_number, end_number + 1, 2):
-    print(number, end=' ')
+start = 77
+end = 777
+for number in range(start, end + 1):
+    if number % 2 != 0:
+        print(number)
 
 
 
