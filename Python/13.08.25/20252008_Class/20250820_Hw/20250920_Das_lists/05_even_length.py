@@ -1,0 +1,9 @@
+text = 'Я люблю программировать на Python'
+words = text.split()
+even_length = []
+
+for word in words:
+    if len(word) % 2 == 0:
+        even_length.append(word)
+
+print(even_length)
