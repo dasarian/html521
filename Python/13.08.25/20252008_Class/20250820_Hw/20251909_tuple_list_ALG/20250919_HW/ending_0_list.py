@@ -1,3 +1,5 @@
+# 1. Создать список из чисел, оканчивающихся нулем максимальным количеством способов (хотя бы три)
+
 # 1. 
 numbers = list(range(101))
 zero_ending_numbers = [num for num in numbers if num % 10 == 0]
