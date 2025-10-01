@@ -52,3 +52,4 @@ def find_phones(query):
 query = "Гена Баринова"
 phones = find_phones(query)
 print(f"Телефоны для '{query}': {phones}")
+
