@@ -13,7 +13,7 @@ def main():
         if choice == "create":
             try:
                 with open(file_name, 'w', encoding='utf-8') as f:
-                    print(f"Файл '{file_name}' создан или очищен.")
+                    print(f"Файл '{file_name}' создан.")
             except Exception as e:
                 print(f"Произошла ошибка: {e}")
 
