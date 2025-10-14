@@ -1,0 +1,6 @@
+f = open('favorite_book.txt', 'w', encoding='utf-8') 
+f.write("Название любимой книги: \"Мастер и Маргарита\"\n")
+f.write("Автор: Михаил Булгаков\n")
+f = open('favorite_book.txt', 'r', encoding='utf-8') 
+content = f.read()
+print(content)
