@@ -34,5 +34,23 @@ else:
     print(f"Число {user_number} не найдено в списке.")
 
 
+# 1.3 Исправить программу, чтобы она составляла список всех позиций, на которых встретилось искомое число
+
+def find_all_positions(numbers, target):
+    positions = []
+    i = 0
+    while i < len(numbers):
+        if numbers[i] == target:
+            positions.append(i)
+        i += 1
+    return positions
+
+all_positions = find_all_positions(numbers, user_number)
+if all_positions:
+    print(f"Число {user_number} найдено на позициях: {all_positions}.")
+else:
+    print(f"Число {user_number} не найдено.")
+
+    
 
 
