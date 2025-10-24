@@ -18,8 +18,14 @@ class Room:
     def ploshad(self):
         return self.width * self.length
     
+    def __str__(self):
+        return 'Комната %ix%i, высотой %iм\nПлощадь %i' % (
+            self.width, self.length, self.height, self.ploshad()
+        )
+    
 my_room = Room(4, 4)
 print('Площадь комнаты: ', my_room.ploshad())
+print('Так печатается комната: \n', my_room, sep='')
 
 # Написать класс квартира с массивом комнат,
 class Flat:
@@ -55,3 +61,4 @@ class Flat:
 
 one_flat = Flat(1, 1)
 print(one_flat.ploshad())
+
